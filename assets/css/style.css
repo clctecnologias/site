@@ -1,0 +1,865 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    background: var(--cr0);
+    scroll-behavior: smooth;
+}
+
+:root {
+    --cr0: #151515;
+    --cr1: #FE61BA;
+    --cr2: #EE3B8F;
+    --cr3: #212121;
+    --cr4: #2E2C2C;
+    --rb: "Roboto", sans-serif;
+    --in: "Inter", sans-serif;
+}
+
+.menu {
+    height: 4rem;
+    z-index: 10;
+    position: fixed;
+    width: 95%;
+    display: flex;
+    border-radius: 9999px;
+    margin: 1rem 2%;
+    align-items: center;
+    backdrop-filter: blur(4px);
+    border: 2px solid var(--cr4);
+    background-color: #12121260;
+    padding-inline: 1rem;
+    justify-content: space-between;
+}
+
+.menu .navLogoMenu img {
+    width: 40px;
+}
+
+.menu .navMenu2 {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.menu .navMenu2 .menuMobile a {
+    color: white;
+    font-weight: 200;
+    padding-inline: .5rem;
+    text-decoration: none;
+    font-family: var(--in);
+}
+
+.menu .navMenu2 .menuMobile a.active {
+    font-weight: 500;
+    color: var(--cr2);
+}
+
+.menu .menuHamburguer {
+    display: none;
+    cursor: pointer;
+    font-size: 25pt;
+    color: var(--cr2);
+}
+
+.botao {
+    background-color: var(--cr2);
+    color: white;
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 11pt;
+    font-family: var(--in);
+    font-weight: bold;
+}
+
+.seta {
+    font-size: 12pt;
+    transform: rotate(-45deg);
+}
+
+.textoColorido {
+    color: var(--cr2);
+    display: inline-block;
+    text-shadow: 0 0 1px var(--cr2), 0 0 10px var(--cr2), 0 0 5px var(--cr2);
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    clip-path: circle(0 0, 100% 0, 100% 100%, 0% 100%);
+    justify-content: center;
+    background: center / cover no-repeat url("../img/bg1.png");
+    height: 100%;
+}
+
+.conteudoPreloader img {
+    width: 50px;
+}
+
+.conteudoPreloader h1 {
+    font-family: var(--in);
+    color: white;
+}
+
+.conteudoPreloader p {
+    font-family: var(--in);
+    font-weight: 700;
+    color: var(--cr2);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}
+
+.hero, .menu {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.hero.loaded, .menu.loaded {
+    opacity: 1;
+}
+
+.hero .secao1 {
+    height: calc(100vh);
+    display: flex;
+    padding-top: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--cr0);
+    min-height: 100vh;
+}
+
+.secao {
+    padding-inline: 1rem;
+    background: var(--cr0);
+}
+
+.hero .imgHero img {
+    width: 40rem;
+}
+
+
+.hero .conteudoHero {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero .conteudoHero .tituloHero {
+    font-family: var(--rb);
+    font-size: 35pt;
+    color: white;
+    font-weight: bold;
+}
+
+.hero .conteudoHero .textoHero {
+    color: white;
+    padding-block: .5rem;
+    font-weight: 200;
+    font-family: var(--in);
+}
+
+.botoesHero {
+    display: flex;
+    gap: .2rem;
+    border: 1px solid #2E2C2C;
+    background: var(--cr3);
+    padding: .3rem;
+    box-shadow: 0 0 4px var(--cr4);
+    border-radius: 9999px;
+    width: max-content;
+}
+
+.botao0 {
+    background-color: transparent;
+    color: white;
+}
+
+.secao2 {
+    background-color: var(--cr0);
+}
+
+.topoSecao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topoSecao .tituloSecao {
+    font-family: var(--rb);
+    font-size: 11pt;
+    color: var(--cr2);
+    font-weight: bold;
+}
+
+.topoSecao .textoSecao {
+    color: white;
+    width: 70%;
+    font-family: var(--in);
+    font-weight: 200;
+}
+.topoSecao .textoSecaoLado {
+    font-family: var(--rb);
+    font-size: 14pt;
+    color: white;
+    font-weight: bold;
+}
+
+.textoSecaoColorido {
+    color: rgba(80, 78, 78, 0.945);
+}
+.secao2 .contentCardServico {
+    display: flex;
+    padding-top: .5rem;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.secao2 .contentCardServico .cardServico {
+    gap: 1rem;
+    width:25%;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    background: var(--cr4);
+    flex-direction: column;
+}
+
+.secao2 .contentCardServico .cardServico:hover .imgCardServico {
+    filter: grayscale(0%);
+}
+
+.secao2 .contentCardServico .cardServico .imgCardServico {
+    width:100%;
+       height:350px;
+       border-radius: 10px;
+       filter: grayscale(100%);
+       transition: all .4s ease-in ;
+}
+
+.secao2 .contentCardServico .cardServico .navTextoCardServico .nomeEmpresa {
+    font-family: var(--rb);
+    font-size: 13pt;
+    font-weight: bolder;
+    color: gray;
+}
+
+.secao2 .contentCardServico .cardServico .navTextoCardServico .nomeServico {
+    font-family: var(--in);
+    font-size: 14pt;
+    color: var(--cr2);
+    font-weight: 600;
+}
+
+.secao2 .contentCardServico .cardServico .navTextoCardServico .descricaoServico {
+    font-family: var(--rb);
+    font-weight: 200;
+    color: white;
+}
+
+.secao3 .contentCardPorqueEscolher {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.secao3 .contentCardPorqueEscolher .cardPorqueEscolher {
+    width: 30%;
+    border: 2px solid var(--cr4);
+    padding: 1rem;
+    background: var(--cr3);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.secao3 .contentCardPorqueEscolher .cardPorqueEscolher:hover nav.tituloCardPorqueEscolher { 
+    color: var(--cr2);
+}
+
+.secao3 .contentCardPorqueEscolher .cardPorqueEscolher nav.tituloCardPorqueEscolher {
+    display: flex; 
+    align-items: center;
+    color: gray;
+    font-family: var(--in);
+    justify-content: space-between;
+    position: relative;
+    transition: all .4s ease-in;
+}
+
+.secao3 .contentCardPorqueEscolher .cardPorqueEscolher nav.tituloCardPorqueEscolher i {
+    font-size: 20pt;
+    border-radius: 9999px;
+    padding: .8rem;
+    color: var(--cr2);
+    top: -100%;
+    right: -13%;
+    position: absolute;
+    border: 2px solid var(--cr4);
+    padding-inline: .8rem;
+    background: var(--cr3);
+}
+
+.secao3 .contentCardPorqueEscolher .cardPorqueEscolher nav.textoCardPorqueEscolher {
+    font-family: var(--rb);
+    color: white;
+    font-weight: 200;
+    padding-block: .5rem;
+}
+
+.secao3 .contentPorqueEscolher .imgMao {
+    width: 60%;
+}
+
+.secao3 .contentPorqueEscolher .imgMao img {
+    width: 70%;
+}   
+.allPorqueEscolher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.secao3 .contectCardQuemSomos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.secao3 .contectCardQuemSomos .cardFounder {
+    border: 2px solid var(--cr4);
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all .8s ease;
+}
+
+.secao3 .contectCardQuemSomos .cardFounder.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.secao3 .cardFounder .efeitoCardFounder {
+    height: 8%;
+    width: 25%;
+    z-index: 1;
+    position: absolute;
+    border-radius: 9999px;
+    background: var(--cr0);
+    border: 2px solid var(--cr4);
+}
+
+.secao3 .cardFounder .efeitoCardFounder1 {
+    top: -2%;
+    right: -6%;
+}
+
+.secao3 .cardFounder .efeitoCardFounder2 {
+    left: -12%;
+    transform: rotate(90deg);
+}
+
+.secao3 .cardFounder .efeitoCardFounder3 {
+    right: -12%;
+    bottom: 15%;
+    transform: rotate(90deg);
+}
+.secao3 .cardFounder .efeitoCardFounder4 {
+    right: -12%;
+    bottom: 35%;
+}
+
+.secao3 .contectCardQuemSomos .cardFounder .divImgFounder img {
+    width: 95%;
+    filter: grayscale(100);
+    transition: all .3s ease .2s;
+}
+
+.secao3 .contectCardQuemSomos .cardFounder:hover .divImgFounder img {
+    filter: grayscale(0);
+}
+
+.secao3 .divInfoFounder .nameFounder {
+    color: var(--cr2);
+    font-size: 13pt;
+    font-weight: bolder;
+    font-family: var(--in);
+}
+.secao3 .divInfoFounder .statusFounder {
+    color: rgba(77, 75, 75);
+    font-family: var(--rb);
+    padding-block: .5rem;
+    font-size: 12pt;
+    font-weight: bolder;
+}
+
+.secao3 .divInfoFounder .aboutFounder {
+    color: white;
+    font-family: var(--rb);
+    font-weight: 200;
+}
+
+.secao3 .contentInfoCLC {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: center / cover no-repeat url("../img/bg1.png");
+}
+
+.secao3 .contentInfoCLC .infoCLCtext {
+    width: 40%;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #2E2C2C;
+    font-family: var(--rb);
+}
+
+.secao5 {
+    background: center / cover no-repeat url("../img/bg1.png");
+}
+
+.secao5 .formSolicitarServico {
+    display: flex;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.secao5 .formSolicitarServico .formServico {
+    padding: .5rem;
+    width: 40%;
+    border-radius: 10px;
+    border: 2px solid var(--cr4);
+    background-color: transparent;
+    background: #12121260;
+    backdrop-filter: blur(10px);
+}
+
+.secao5 .formServico .logoTextoForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.secao5 .formServico .logoTextoForm h2 {
+    font-size: 8pt;
+    color: var(--cr1);
+    font-weight: bold; 
+    font-family: var(--rb);
+}
+
+.secao5 .formServico .imgLogoForm {
+    width: 25px;
+}
+
+.secao5 .formSolicitarServico .formServico input[type="radio"] {
+    display: none;
+}
+
+.secao5 .formSolicitarServico .formServico input[type="radio"]:checked + label {
+    color: white;
+    box-shadow: 0 0 4px 0 var(--cr2);
+    background: var(--cr2);
+    border: 2px solid var(--cr2);
+}
+
+.secao5 .formServico label {
+    color: var(--cr4);
+    border: 2px solid var(--cr4);
+    font-family: var(--in);
+    font-family: var(--rb);
+    font-weight: 800;
+    padding: .2rem .5rem;
+    border-radius: 9999px;
+    cursor: pointer;
+    margin: .5rem .2rem;
+}
+
+.secao5 .formServico .divServico h4 {
+    font-family: var(--in);
+    font-size: 10pt;
+    font-weight: bold;
+    padding-block: .5rem;
+    color: var(--cr2);
+}
+
+.secao5 .formServico .divServico p.textoQuest1 {
+    font-family: var(--rb);
+    font-weight: 300;
+    margin-block: .5rem;
+    color: white;
+}
+
+.secao5 .formServico .inputsLabel {
+    display: flex;
+    padding-block: .5rem;
+    flex-wrap: wrap;
+}
+
+.textoColoridoForm {
+    font-weight: 800;
+    color: #afadad;
+}
+
+.secao5 .formServico textarea {
+    width: 60%;
+    height: 150px;
+    resize: none;
+    outline: none;
+    font-weight: 300;
+    padding: .5rem;
+    border-radius: 10px;
+    margin-top: .3rem;
+    border: 2px solid var(--cr4);
+    font-family: var(--rb);
+    color: white;
+    background: #151515;
+    transition: all .4s ease;
+}
+
+.secao5 .formServico input[type="text"] {
+    background: transparent;
+    border: none;
+    padding: .3rem;
+    outline: none;
+    font-weight: 300;
+    font-family: var(--rb);
+    color: white;
+    transition: all .4s ease;
+    border-bottom: 2px solid var(--cr4);
+}
+
+.secao5 .formServico input[type="text"]:hover {
+    border-bottom: 2px solid var(--cr2);
+}
+
+.secao5 .formServico textarea:hover {
+    border: 2px solid var(--cr2);
+}
+
+.secao5 .formServico .navInputsCliente nav {
+    margin: 1rem;
+} 
+.secao5 .formServico .navInputsCliente {
+    color: var(--cr2);
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    font-family: var(--rb);
+    flex-wrap: wrap;
+}
+
+.secao5 .formServico .divBotoesForm {
+    background: var(--cr4);
+    display: flex;
+    box-shadow: 0 0 4px 0 var(--cr3);
+    width: max-content;
+    padding: .4rem;
+    border-radius: 9999px;
+}
+
+footer {
+    padding-block-start: 3rem;
+    background: var(--cr0);
+}
+
+footer .contentAllFooter {
+    display: flex;
+    position: relative;
+    box-shadow: 0 0 4px 0 var(--cr4);
+    align-items: center;
+    padding-inline: 2rem;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.contentAllFooter .efeitoFooter {
+    width: 10%;
+    border-radius: 999px;
+    height: 40%;
+    box-shadow: 0 0 4px 0 var(--cr4);
+    background: var(--cr0);
+    position: absolute;
+    top: -20%;
+    left: 15%;
+}
+
+.contentAllFooter .navFooter {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+.contentAllFooter .navFooter a {
+    text-decoration: none;
+    color: #AFADAD;
+    font-family: var(--in);
+    font-weight: 300;
+}
+
+.contentAllFooter .navFooter1 img {
+    width: 50px;
+}
+
+.contentAllFooter .navFooter1 p {
+    font-weight: bolder;
+    font-family: var(--in);
+    color: #AFADAD;
+}
+
+.contentAllFooter .navFooterRedes {
+    display: flex;
+    gap: 2rem;
+}
+
+.contentAllFooter .navFooterRedes a {
+    font-size: 16pt;
+    color: #AFADAD;
+    transition: all .4s ease .1s;
+}
+
+.contentAllFooter .navFooterRedes a:hover {
+    color: var(--cr1);
+}
+
+.contentAllFooter .navFooter h4 {
+    font-family: var(--in);
+    font-weight: 600;
+    color: #AFADAD;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 769px) {
+
+    .menu {
+        margin: 0;
+        width: 100%;
+        border: none;
+        border-radius: 0;;
+    }    
+
+    .menu .navLogoMenu {
+        z-index: 101;
+    }
+    
+    .menu .navLogoMenu img {
+        width: 37px;
+    }
+    
+    .menu .navMenu2 {
+        top: 0;
+        left: 0;
+        margin: 0;
+        width: 100vw;
+        z-index: 100;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        pointer-events: none;
+        flex-direction: column;
+        justify-content: space-around;
+        clip-path: circle(100px at 90% -15%);
+        background: 10% 90% / cover no-repeat url("../img/bg1.png");
+        transition: all 1s ease-out .2s;
+    }
+
+    .menu.activo .navMenu2 {
+        clip-path: circle(1000px at 90% -15%);
+    }
+    
+    .menu .navMenu2 .menuMobile {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu .navMenu2 .menuMobile a {
+        font-weight: 500;
+    }
+    .menu .navMenu2 .menuMobile a.active {
+        font-weight: 800;
+    }
+
+    .menu .menuHamburguer {
+        z-index: 101;
+        display: block;
+    }
+
+    .hero .secao1 {
+        display: flex;
+        height: max-content;
+        flex-direction: column;
+    }
+    
+    .hero .imgHero img {
+        width: 25rem;
+    }
+
+    .topoSecao {
+        flex-direction: column;
+        text-align: left;
+    }
+    .topoSecao .textoSecao {
+        width: 100%;
+    }
+    .secao2 .contentCardServico {
+        display: flex;
+        flex-direction: column;
+        padding-top: .5rem;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        align-items: center;
+    }
+    
+    .secao2 .contentCardServico .cardServico {
+        gap: 1rem;
+        width:90%;
+        padding: .5rem;
+    }
+    
+    .secao2 .contentCardServico .cardServico:hover .imgCardServico {
+        filter: grayscale(0%);
+    }
+    
+    .secao2 .contentCardServico .cardServico .imgCardServico {
+        height:300px;
+    }
+
+    .secao3 .allPorqueEscolher {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .secao3 .contentCardPorqueEscolher {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .secao3 .contentCardPorqueEscolher .cardPorqueEscolher {
+        width: 90%;
+        border: 2px solid var(--cr4);
+        padding: 1rem;
+        background: var(--cr3);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+
+    .secao3 .contentPorqueEscolher .imgMao {
+        width: 100%;
+    }
+    
+    .secao3 .contentPorqueEscolher .imgMao img {
+        width: 100%;
+    }  
+
+    .secao3 .contectCardQuemSomos{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .secao3 .contectCardQuemSomos .cardFounder {
+        border: 2px solid var(--cr4);
+        margin: 1rem;
+        padding: 1rem;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 10px;
+        width: 90%;
+        text-align: center;
+    }
+
+    .secao3 .contentInfoCLC {
+        height: max-content;
+        padding-block: .5rem;
+        background: 20% 100% / cover no-repeat url("../img/bg1.png");
+    }
+    
+    .secao3 .contentInfoCLC .infoCLCtext {
+        width: 90%;
+    }     
+    .secao5 .formSolicitarServico .formServico {
+        width: 100%;
+    }
+
+    .secao5 .formServico textarea {
+        width: 100%;
+        height: 200px;
+    }
+
+    .contentAllFooter {
+        flex-direction: column;
+    }
+    .contentAllFooter .navFooter {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .contentAllFooter .efeitoFooter {
+        width: 20%;
+        height: 10%;
+        top: -5%;
+    }
+
+    .contentAllFooter .navFooterRedes a {
+        font-size: 19pt;
+        color: var(--cr1);
+    }
+}
